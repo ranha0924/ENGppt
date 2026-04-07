@@ -37,11 +37,11 @@
     <h2>목차</h2>
   </div>
   <div class="contents-grid reveal">
-    <a href="#vocab" class="contents-card"><span class="contents-num">01</span><span class="contents-name">핵심 단어</span><span class="contents-badge badge-required">필수</span></a>
-    <a href="#answer" class="contents-card"><span class="contents-num">02</span><span class="contents-name">정답 설명</span><span class="contents-badge badge-bonus">추가</span></a>
-    <a href="#sentence" class="contents-card"><span class="contents-num">03</span><span class="contents-name">주요 문장 분석</span><span class="contents-badge badge-required">필수</span></a>
-    <a href="#flow" class="contents-card"><span class="contents-num">04</span><span class="contents-name">글의 흐름과 요지</span><span class="contents-badge badge-required">필수</span></a>
-    <a href="#brain-section" class="contents-card"><span class="contents-num">05</span><span class="contents-name">거절과 뇌의 반응</span><span class="contents-badge badge-bonus">추가</span></a>
+    <a href="#vocab" class="contents-card"><span class="contents-num">01</span><span class="contents-name">핵심 단어</span></a>
+    <a href="#answer" class="contents-card"><span class="contents-num">02</span><span class="contents-name">정답 설명</span></a>
+    <a href="#sentence" class="contents-card"><span class="contents-num">03</span><span class="contents-name">주요 문장 분석</span></a>
+    <a href="#flow" class="contents-card"><span class="contents-num">04</span><span class="contents-name">글의 흐름과 요지</span></a>
+    <a href="#brain-section" class="contents-card"><span class="contents-num">05</span><span class="contents-name">거절과 뇌의 반응</span></a>
     <a href="#conclusion" class="contents-card"><span class="contents-num">06</span><span class="contents-name">결론</span></a>
   </div>
 </section>
@@ -306,8 +306,7 @@ const vocabData=[
   {word:"circumstance",pos:"n.",kr:"상황",syn:[],ant:[]},
 ];
 const tbody=document.getElementById('vocab-body');
-const keyWords=['rejection','deliberately','unfavorable','circumstance','favorable'];
-vocabData.forEach(v=>{const tr=document.createElement('tr');const isKey=keyWords.includes(v.word.toLowerCase());tr.innerHTML=`<td>${v.word} <span class="vocab-pos">${v.pos}</span>${isKey?'<span class="vocab-key">8번</span>':''}</td><td>${v.kr}</td><td>${v.syn.length?v.syn.map(s=>`<span class="syn-tag">${s}</span>`).join(''):'<span class="vocab-empty">—</span>'}</td><td>${v.ant.length?v.ant.map(a=>`<span class="ant-tag">${a}</span>`).join(''):'<span class="vocab-empty">—</span>'}</td>`;tbody.appendChild(tr)});
+vocabData.forEach(v=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${v.word} <span class="vocab-pos">${v.pos}</span></td><td>${v.kr}</td><td>${v.syn.length?v.syn.map(s=>`<span class="syn-tag">${s}</span>`).join(''):'<span class="vocab-empty">—</span>'}</td><td>${v.ant.length?v.ant.map(a=>`<span class="ant-tag">${a}</span>`).join(''):'<span class="vocab-empty">—</span>'}</td>`;tbody.appendChild(tr)});
 
 const timelineData=[
   {label:"문장 01 ~ 02",tag:"도입",content:"거절은 일상적인 부분이지만, 대부분의 사람들은 이를 감당하지 못해 요청 자체를 포기한다."},
