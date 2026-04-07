@@ -291,25 +291,25 @@
 
 <script>
 const vocabData=[
-  {word:"rejection",pos:"n.",kr:"거절",syn:["refusal","denial"],ant:["acceptance"]},
-  {word:"handle",pos:"v.",kr:"다루다, 감당하다",syn:["deal with","manage"],ant:["ignore","avoid"]},
-  {word:"painful",pos:"adj.",kr:"고통스러운",syn:["hurting","sore"],ant:["painless","comfortable"]},
-  {word:"risk",pos:"n.",kr:"위험",syn:["danger","hazard"],ant:["safety"]},
-  {word:"negative",pos:"adj.",kr:"부정적인",syn:["bad","unfavorable"],ant:["positive"]},
-  {word:"positive",pos:"adj.",kr:"긍정적인",syn:["good","optimistic"],ant:["negative"]},
-  {word:"affect",pos:"v.",kr:"영향을 미치다",syn:["influence","impact"],ant:["have no effect on"]},
-  {word:"aspect",pos:"n.",kr:"측면",syn:["side","part"],ant:["whole"]},
-  {word:"come up with",pos:"phr.",kr:"생각해내다",syn:["think of","devise"],ant:["forget"]},
-  {word:"request",pos:"n./v.",kr:"요청",syn:["ask","demand"],ant:["refuse"]},
+  {word:"rejection",pos:"n.",kr:"거절",syn:[{en:"refusal",kr:"거부"},{en:"denial",kr:"부정, 거절"}],ant:[{en:"acceptance",kr:"수용"}]},
+  {word:"handle",pos:"v.",kr:"다루다, 감당하다",syn:[{en:"deal with",kr:"처리하다"},{en:"manage",kr:"관리하다"}],ant:[{en:"ignore",kr:"무시하다"},{en:"avoid",kr:"피하다"}]},
+  {word:"painful",pos:"adj.",kr:"고통스러운",syn:[{en:"hurting",kr:"아픈"},{en:"sore",kr:"쓰라린"}],ant:[{en:"painless",kr:"고통 없는"},{en:"comfortable",kr:"편안한"}]},
+  {word:"risk",pos:"n.",kr:"위험",syn:[{en:"danger",kr:"위험"},{en:"hazard",kr:"위험 요소"}],ant:[{en:"safety",kr:"안전"}]},
+  {word:"negative",pos:"adj.",kr:"부정적인",syn:[{en:"bad",kr:"나쁜"},{en:"unfavorable",kr:"불리한"}],ant:[{en:"positive",kr:"긍정적인"}]},
+  {word:"positive",pos:"adj.",kr:"긍정적인",syn:[{en:"good",kr:"좋은"},{en:"optimistic",kr:"낙관적인"}],ant:[{en:"negative",kr:"부정적인"}]},
+  {word:"affect",pos:"v.",kr:"영향을 미치다",syn:[{en:"influence",kr:"영향을 주다"},{en:"impact",kr:"충격을 주다"}],ant:[{en:"have no effect on",kr:"영향이 없다"}]},
+  {word:"aspect",pos:"n.",kr:"측면",syn:[{en:"side",kr:"면"},{en:"part",kr:"부분"}],ant:[{en:"whole",kr:"전체"}]},
+  {word:"come up with",pos:"phr.",kr:"생각해내다",syn:[{en:"think of",kr:"떠올리다"},{en:"devise",kr:"고안하다"}],ant:[{en:"forget",kr:"잊다"}]},
+  {word:"request",pos:"n./v.",kr:"요청",syn:[{en:"ask",kr:"부탁하다"},{en:"demand",kr:"요구하다"}],ant:[{en:"refuse",kr:"거절하다"}]},
   {word:"ask for~",pos:"phr.",kr:"~을 요청하다",syn:[],ant:[]},
   {word:"work",pos:"v.",kr:"작동하다, 효과가 있다",syn:[],ant:[]},
-  {word:"favorable",pos:"adj.",kr:"호의적인",syn:[],ant:["unfavorable"]},
+  {word:"favorable",pos:"adj.",kr:"호의적인",syn:[],ant:[{en:"unfavorable",kr:"비호의적인"}]},
   {word:"deliberately",pos:"adv.",kr:"의도적으로",syn:[],ant:[]},
-  {word:"unfavorable",pos:"adj.",kr:"호의적이지 않은",syn:[],ant:["favorable"]},
+  {word:"unfavorable",pos:"adj.",kr:"호의적이지 않은",syn:[],ant:[{en:"favorable",kr:"호의적인"}]},
   {word:"circumstance",pos:"n.",kr:"상황",syn:[],ant:[]},
 ];
 const tbody=document.getElementById('vocab-body');
-vocabData.forEach(v=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${v.word} <span class="vocab-pos">${v.pos}</span></td><td>${v.kr}</td><td>${v.syn.length?v.syn.map(s=>`<span class="syn-tag">${s}</span>`).join(''):'<span class="vocab-empty">—</span>'}</td><td>${v.ant.length?v.ant.map(a=>`<span class="ant-tag">${a}</span>`).join(''):'<span class="vocab-empty">—</span>'}</td>`;tbody.appendChild(tr)});
+vocabData.forEach(v=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${v.word} <span class="vocab-pos">${v.pos}</span></td><td>${v.kr}</td><td>${v.syn.length?v.syn.map(s=>`<span class="syn-tag">${s.en} <span class="tag-kr">${s.kr}</span></span>`).join(''):'<span class="vocab-empty">—</span>'}</td><td>${v.ant.length?v.ant.map(a=>`<span class="ant-tag">${a.en} <span class="tag-kr">${a.kr}</span></span>`).join(''):'<span class="vocab-empty">—</span>'}</td>`;tbody.appendChild(tr)});
 
 const timelineData=[
   {label:"문장 01 ~ 02",tag:"도입",content:"거절은 일상적인 부분이지만, 대부분의 사람들은 이를 감당하지 못해 요청 자체를 포기한다."},
