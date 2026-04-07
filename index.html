@@ -28,12 +28,6 @@
   <h1>Don't Fear<br>Rejection</h1>
   <p class="subtitle"><span id="typed-text"></span><span class="cursor-blink"></span></p>
   <p class="hero-topic reveal">2026학년도 1학기 1차 모의고사 · 9번 지문</p>
-  <div class="hero-stats reveal">
-    <div class="hero-stat"><span class="stat-num" data-target="16">0</span><span class="stat-label">핵심 단어</span></div>
-    <div class="hero-stat"><span class="stat-num" data-target="8">0</span><span class="stat-label">문장 수</span></div>
-    <div class="hero-stat"><span class="stat-num" data-target="4">0</span><span class="stat-label">문법 포인트</span></div>
-    <div class="hero-stat"><span class="stat-num" data-target="3">0</span><span class="stat-label">뇌 영역 분석</span></div>
-  </div>
   <div class="scroll-hint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
 </section>
 
@@ -345,10 +339,6 @@ secs.forEach(id=>{const el=document.getElementById(id);if(el)navObs.observe(el)}
 /* Reveal on scroll */
 const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
-
-/* Hero stats count-up */
-const statObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.stat-num').forEach(el=>{const target=+el.dataset.target;let cur=0;const step=Math.ceil(target/20);const iv=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(iv)}el.textContent=cur},40)});statObs.unobserve(e.target)}})},{threshold:.5});
-document.querySelectorAll('.hero-stats').forEach(el=>statObs.observe(el));
 
 /* Adapt button toggle */
 document.getElementById('adapt-btn').addEventListener('click',function(){
