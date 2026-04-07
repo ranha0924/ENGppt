@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rejection Therapy — 거절을 두려워하지 마라</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress-bar"></div>
+<nav id="navbar">
+  <div class="logo">REJECTION THERAPY</div>
+  <div class="links">
+    <a href="#hero" class="active">Intro</a>
+    <a href="#vocab">Vocabulary</a>
+    <a href="#sentence">Analysis</a>
+    <a href="#flow">Flow</a>
+    <a href="#brain-section">Brain</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-gradient"></div>
+  <h1>Don't Fear<br>Rejection</h1>
+  <p class="subtitle"><span id="typed-text"></span><span class="cursor-blink"></span></p>
+  <div class="scroll-hint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+</section>
+
+<section id="vocab">
+  <div class="reveal">
+    <div class="section-label">01 — Vocabulary</div>
+    <h2>Key Vocabulary</h2>
+  </div>
+  <div class="reveal">
+    <table class="vocab-table">
+      <thead><tr><th>Word</th><th>뜻</th><th>유의어</th><th>반의어</th></tr></thead>
+      <tbody id="vocab-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="sentence">
+  <div class="reveal">
+    <div class="section-label">02 — Sentence Analysis</div>
+    <h2>주요 문장 분석</h2>
+  </div>
+
+  <div class="notebook reveal">
+    <div class="notebook-legend">
+      <span><span class="nb-dot" style="background:var(--blue)"></span> S 주어</span>
+      <span><span class="nb-dot" style="background:var(--coral)"></span> V 동사</span>
+      <span><span class="nb-dot" style="background:var(--purple)"></span> O 목적어</span>
+      <span><span class="nb-dot" style="background:var(--orange)"></span> O.C 목적보어</span>
+      <span><span class="nb-dot" style="background:var(--text-sub)"></span> M 수식어</span>
+      <span style="font-size:12px">( ) 구/절 묶음 &nbsp; ⤸ 수식</span>
+    </div>
+
+    <div class="nb-line">
+      <div class="nb-line-label">부사구 — By + V-ing (~함으로써) <span class="grammar-note gn-5">get + O + p.p. = 5형식</span></div>
+      <div class="bracket rd green" data-label="부사구" style="gap:3px">
+        <span class="w c-gray"><span class="en">By</span><span class="label">전치사</span></span>
+        <span class="w c-gray"><span class="en">deliberately</span><span class="label">M (부사)</span><span class="sub">의도적으로</span></span>
+        <span class="w c-red circled"><span class="en">getting</span><span class="label">V (5형식)</span><span class="sub">~하게 만들다</span></span>
+        <span class="w c-purple"><span class="en">yourself</span><span class="label">O</span><span class="sub">너 자신을</span></span>
+        <span class="w c-orange wrong-mark" id="wrong-word" style="cursor:pointer">
+          <span class="en">⑤welcomed</span>
+          <span class="fix">✕ rejected</span>
+          <span class="label">O.C</span>
+          <span class="sub">환영받는 ❌</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="nb-line">
+      <div class="nb-line-label">주절</div>
+      <span class="w c-blue"><span class="en">you</span><span class="label">S</span><span class="sub">너는</span></span>
+      <span class="w c-red"><span class="en">'ll grow</span><span class="label">V</span><span class="sub">기르게 될 것이다</span></span>
+      <div class="bracket rd" data-label="O" style="gap:3px">
+        <span class="w c-purple"><span class="en">a thicker skin</span><span class="label">O</span><span class="sub">더 두꺼운 피부</span></span>
+      </div>
+      <span class="arrow-note">⤸ 관용표현: <strong>grow a thicker skin</strong> = 거절에 둔감해지다, 강해지다</span>
+    </div>
+
+    <div class="nb-line">
+      <div class="nb-line-label">관계대명사절 — a thicker skin 수식 ⤸ <span class="grammar-note gn-rel">관계대명사 that</span></div>
+      <div class="bracket sq" data-label="관계대명사절" style="gap:3px">
+        <span class="w c-blue"><span class="en">that</span><span class="label">S (=skin)</span></span>
+        <span class="w c-red circled"><span class="en">will allow</span><span class="label">V (5형식)</span><span class="sub">허락하다</span></span>
+        <span class="w c-purple"><span class="en">you</span><span class="label">O</span></span>
+        <div class="bracket rd orange" data-label="O.C (to부정사)" style="gap:3px">
+          <span class="w c-orange"><span class="en">to take on much more</span><span class="label">O.C</span><span class="sub">훨씬 많은 것을 떠맡도록</span></span>
+          <span class="w c-gray"><span class="en">in life</span><span class="label">M</span><span class="sub">인생에서</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="nb-line">
+      <div class="nb-line-label">분사구문 (결과) <span class="grammar-note gn-part">thus + V-ing</span></div>
+      <span class="w c-gray"><span class="en">thus</span><span class="label">M</span><span class="sub">그리하여</span></span>
+      <span class="w c-red circled"><span class="en">making</span><span class="label">V (5형식)</span><span class="sub">만들면서</span></span>
+      <span class="w c-purple"><span class="en">you</span><span class="label">O</span></span>
+      <span class="w c-orange"><span class="en">more successful</span><span class="label">O.C</span><span class="sub">더 성공적인</span></span>
+      <div class="bracket rd" data-label="M (전+동명사구)" style="gap:3px">
+        <span class="w c-gray"><span class="en">at dealing with</span><span class="label">전+동명사</span><span class="sub">~에 대처하는 데</span></span>
+        <span class="w c-gray"><span class="en">unfavorable circumstances.</span><span class="label">명사구</span><span class="sub">호의적이지 않은 상황</span></span>
+      </div>
+    </div>
+
+    <div class="nb-translation">
+      <strong>해석:</strong> 의도적으로 스스로를 거절당하는 상황에 놓이게 함으로써, 여러분은 더 둔감해지고, 인생에서 훨씬 더 많은 것을 떠맡을 수 있게 되며, 그리하여 호의적이지 않은 상황에 더 성공적으로 대처할 수 있게 될 것이다.<br><br>
+      <strong style="color:var(--coral)">⑤ welcomed → rejected:</strong> get + O + p.p. 구조에서 목적보어가 문맥에 맞지 않음. 거절에 노출하라는 내용이므로 <strong style="color:var(--purple)">rejected</strong>가 적절.
+    </div>
+  </div>
+
+  <div class="grammar-scroll reveal">
+    <div class="grammar-card"><div class="grammar-tag">구문</div><h4>By + V-ing</h4><p>"~함으로써" — 수단·방법의 부사구.</p></div>
+    <div class="grammar-card"><div class="grammar-tag">관계사</div><h4>that will allow ~</h4><p>관계대명사 that. 선행사 a thicker skin.</p></div>
+    <div class="grammar-card"><div class="grammar-tag">분사구문</div><h4>thus making</h4><p>thus + 현재분사 → 결과 분사구문.</p></div>
+    <div class="grammar-card"><div class="grammar-tag">관용표현</div><h4>grow a thicker skin</h4><p>거절·비판에 둔감해지다, 강해지다.</p></div>
+  </div>
+</section>
+
+<section id="flow">
+  <div class="reveal"><div class="section-label">03 — Text Flow & Main Idea</div><h2>글의 흐름과 요지</h2></div>
+  <div class="timeline reveal" id="timeline"></div>
+  <div class="gist-card reveal"><div class="gist-label">요지 (Main Idea)</div>거절을 피하지 말고, rejection therapy를 통해 의도적으로 거절에 노출됨으로써 더 강한 사람이 되자.</div>
+</section>
+
+<section id="brain-section">
+  <div class="brain-wrapper">
+    <div class="reveal">
+      <div class="section-label">04 — Neuroscience</div>
+      <h2>Your Brain<br>on Rejection</h2>
+      <div class="brain-svg-container">
+        <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+          <path d="M250 50 C150 50,60 120,70 200 C75 260,100 310,140 340 C180 370,230 380,270 370 C320 355,370 320,400 270 C430 220,440 160,410 110 C380 60,310 50,250 50Z" fill="#1E2235" stroke="#2A3050" stroke-width="2"/>
+          <path d="M150 100 C180 130,200 110,230 140" fill="none" stroke="#2A3050" stroke-width="1.5"/>
+          <path d="M200 80 C220 110,260 95,290 120" fill="none" stroke="#2A3050" stroke-width="1.5"/>
+          <path d="M130 160 C170 180,190 155,230 175" fill="none" stroke="#2A3050" stroke-width="1.5"/>
+          <path d="M240 70 C270 100,310 80,340 105" fill="none" stroke="#2A3050" stroke-width="1.5"/>
+          <path d="M280 140 C310 165,340 145,370 170" fill="none" stroke="#2A3050" stroke-width="1.5"/>
+          <path d="M100 220 C140 200,170 230,200 210" fill="none" stroke="#2A3050" stroke-width="1.5"/>
+          <path d="M310 200 C340 225,370 205,390 230" fill="none" stroke="#2A3050" stroke-width="1.5"/>
+          <path d="M160 270 C190 250,220 280,250 260" fill="none" stroke="#2A3050" stroke-width="1.5"/>
+          <path d="M270 270 C300 290,330 265,350 285" fill="none" stroke="#2A3050" stroke-width="1.5"/>
+          <ellipse class="brain-region" id="region-pfc" cx="145" cy="170" rx="55" ry="50" fill="rgba(59,130,246,.15)" stroke="rgba(59,130,246,.4)" stroke-width="2" style="--region-color:#3B82F6" data-region="pfc"/>
+          <text x="145" y="175" text-anchor="middle" fill="rgba(59,130,246,.7)" font-size="11" font-family="JetBrains Mono">PFC</text>
+          <ellipse class="brain-region" id="region-acc" cx="255" cy="200" rx="40" ry="35" fill="rgba(255,159,67,.15)" stroke="rgba(255,159,67,.4)" stroke-width="2" style="--region-color:#FF9F43" data-region="acc"/>
+          <text x="255" y="205" text-anchor="middle" fill="rgba(255,159,67,.7)" font-size="11" font-family="JetBrains Mono">ACC</text>
+          <ellipse class="brain-region" id="region-amygdala" cx="230" cy="280" rx="35" ry="28" fill="rgba(255,92,92,.15)" stroke="rgba(255,92,92,.4)" stroke-width="2" style="--region-color:#FF5C5C" data-region="amygdala"/>
+          <text x="230" y="285" text-anchor="middle" fill="rgba(255,92,92,.7)" font-size="10" font-family="JetBrains Mono">Amygdala</text>
+        </svg>
+      </div>
+      <button class="adapt-btn" id="adapt-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+        반복 노출 시 변화 보기
+      </button>
+    </div>
+    <div class="brain-info-panel" id="brain-info-panel">
+      <div class="brain-default-msg" id="brain-default">뇌 부위를 클릭하거나 hover 해보세요</div>
+      <div class="info-card" id="info-amygdala">
+        <div class="region-name" style="color:var(--coral)">Amygdala</div>
+        <div class="region-name-kr">편도체</div>
+        <div class="region-desc">거절 신호를 감지하면 의식적 사고보다 빠르게 이를 <strong style="color:#fff">"위협"</strong>으로 분류합니다. 과거 집단에서의 분리가 곧 죽음을 의미했던 시절의 생존 본능입니다.</div>
+        <div class="stat-number" style="color:var(--coral)" data-target="400" data-suffix="ms">0ms</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:4px">위협 분류까지 걸리는 시간</div>
+      </div>
+      <div class="info-card" id="info-acc">
+        <div class="region-name" style="color:var(--orange)">Anterior Cingulate Cortex</div>
+        <div class="region-name-kr">전대상피질</div>
+        <div class="region-desc">사회적 거절 시 활성화되며, <strong style="color:#fff">신체적 고통과 동일한 신경 경로</strong>를 사용합니다. 뇌는 거절을 실제 물리적 고통처럼 처리합니다.</div>
+        <div class="stat-number" style="color:var(--orange)">= Physical Pain</div>
+      </div>
+      <div class="info-card" id="info-pfc">
+        <div class="region-name" style="color:var(--blue)">Prefrontal Cortex</div>
+        <div class="region-name-kr">전두엽 (전전두피질)</div>
+        <div class="region-desc">편도체가 경보를 울린 뒤 이성적 판단을 시도하지만, 이미 감정 반응이 촉발된 뒤라 <strong style="color:#fff">종종 무력</strong>합니다.</div>
+        <div class="stat-number" style="color:var(--blue)" data-target="300" data-suffix="ms">0ms</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:4px">이성적 개입까지 걸리는 시간</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="close-btn" id="modal-close">&times;</button>
+    <h3>⑤ welcomed가 부적절한 이유</h3>
+    <p>문맥상 거절당할 만한 요청을 <strong>의도적으로</strong> 해보라는 내용입니다.<br><br>
+    <span class="wrong">welcomed</span> (환영받는) → <span class="correction">rejected</span> (거절당하는)<br><br>
+    <code style="background:rgba(0,0,0,.05);padding:2px 8px;border-radius:4px;font-size:13px">get + O + p.p.</code> 구조에서 목적보어만 교체하면 문맥에 맞습니다.</p>
+  </div>
+</div>
+
+<footer>9번 지문 — 거절을 피하려는 태도의 문제점과 거절 요법 &nbsp;|&nbsp; <span>Made with Code</span></footer>
+
+<script>
+const vocabData=[
+  {word:"rejection",kr:"거절",syn:["refusal","denial"],ant:["acceptance"]},
+  {word:"handle",kr:"다루다, 감당하다",syn:["deal with","manage"],ant:["ignore","avoid"]},
+  {word:"painful",kr:"고통스러운",syn:["hurting","sore"],ant:["painless","comfortable"]},
+  {word:"risk",kr:"위험",syn:["danger","hazard"],ant:["safety"]},
+  {word:"negative",kr:"부정적인",syn:["bad","unfavorable"],ant:["positive"]},
+  {word:"positive",kr:"긍정적인",syn:["good","optimistic"],ant:["negative"]},
+  {word:"affect",kr:"영향을 미치다",syn:["influence","impact"],ant:["have no effect on"]},
+  {word:"aspect",kr:"측면",syn:["side","part"],ant:["whole"]},
+  {word:"come up with",kr:"생각해내다",syn:["think of","devise"],ant:["forget"]},
+  {word:"request",kr:"요청",syn:["ask","demand"],ant:["refuse"]},
+  {word:"ask for~",kr:"~을 요청하다",syn:[],ant:[]},
+  {word:"work",kr:"작동하다, 효과가 있다",syn:[],ant:[]},
+  {word:"favorable",kr:"호의적인",syn:[],ant:["unfavorable"]},
+  {word:"deliberately",kr:"의도적으로",syn:[],ant:[]},
+  {word:"unfavorable",kr:"호의적이지 않은",syn:[],ant:["favorable"]},
+  {word:"circumstance",kr:"상황",syn:[],ant:[]},
+];
+const tbody=document.getElementById('vocab-body');
+vocabData.forEach(v=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${v.word}</td><td>${v.kr}</td><td>${v.syn.length?v.syn.map(s=>`<span class="syn-tag">${s}</span>`).join(''):'<span class="vocab-empty">—</span>'}</td><td>${v.ant.length?v.ant.map(a=>`<span class="ant-tag">${a}</span>`).join(''):'<span class="vocab-empty">—</span>'}</td>`;tbody.appendChild(tr)});
+
+const timelineData=[
+  {label:"01 ~ 02",content:"거절은 일상적인 부분이지만, 대부분의 사람들은 이를 감당하지 못해 요청 자체를 포기한다."},
+  {label:"03",content:"하지만 옛말처럼, 요청하지 않으면 답은 항상 'No'이다."},
+  {label:"04 ~ 05",content:"거절을 피하는 것은 삶의 많은 측면에 부정적 영향을 미친다. 거절을 감당할 만큼 강하지 않기 때문."},
+  {label:"06 ~ 07",content:"해결책: Rejection Therapy. 거절당할 만한 요청이나 활동을 의도적으로 시도해 보라."},
+  {label:"08",content:"의도적으로 거절에 노출되면 더 둔감해지고, 불리한 상황에서도 성공적으로 대처할 수 있게 된다."},
+];
+const timeline=document.getElementById('timeline');
+timelineData.forEach(t=>{const item=document.createElement('div');item.className='timeline-item';item.innerHTML=`<div class="dot"></div><div class="tl-header">${t.label}</div><div class="tl-content">${t.content}</div>`;item.addEventListener('click',()=>{document.querySelectorAll('.timeline-item').forEach(el=>el.classList.remove('active'));item.classList.toggle('active')});timeline.appendChild(item)});
+
+const typedEl=document.getElementById('typed-text');const typedStr="거절을 피하려는 태도의 문제점과 극복법";let ci=0;
+function typeChar(){if(ci<typedStr.length){typedEl.textContent+=typedStr[ci];ci++;setTimeout(typeChar,60)}}
+setTimeout(typeChar,600);
+
+window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('progress-bar').style.width=(window.scrollY/h*100)+'%'});
+
+const secs=['hero','vocab','sentence','flow','brain-section'];const navLinks=document.querySelectorAll('nav .links a');const navbar=document.getElementById('navbar');
+const navObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.remove('active'));const l=document.querySelector(`nav .links a[href="#${e.target.id}"]`);if(l)l.classList.add('active');navbar.classList.toggle('dark-mode',e.target.id==='brain-section')}})},{threshold:.3});
+secs.forEach(id=>{const el=document.getElementById(id);if(el)navObs.observe(el)});
+
+const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+document.getElementById('wrong-word').addEventListener('click',()=>document.getElementById('modal-overlay').classList.add('show'));
+document.getElementById('modal-close').addEventListener('click',()=>document.getElementById('modal-overlay').classList.remove('show'));
+document.getElementById('modal-overlay').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove('show')});
+
+const brainRegions=document.querySelectorAll('.brain-region');const defaultMsg=document.getElementById('brain-default');
+brainRegions.forEach(region=>{const id=region.dataset.region;function activate(){brainRegions.forEach(r=>{r.classList.toggle('dimmed',r!==region)});region.classList.add('active');defaultMsg.style.display='none';document.querySelectorAll('.info-card').forEach(c=>c.classList.remove('active'));const card=document.getElementById('info-'+id);if(card){card.classList.add('active');card.querySelectorAll('.stat-number[data-target]').forEach(el=>countUp(el,+el.dataset.target,el.dataset.suffix||''))}}region.addEventListener('mouseenter',activate);region.addEventListener('click',activate)});
+document.querySelector('.brain-svg-container svg').addEventListener('mouseleave',()=>{brainRegions.forEach(r=>{r.classList.remove('dimmed','active')})});
+
+function countUp(el,target,suffix){let cur=0;const step=target/30;const iv=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(iv)}el.textContent=Math.round(cur)+suffix},25)}
+
+let isAdapted=false;
+document.getElementById('adapt-btn').addEventListener('click',function(){const a=document.getElementById('region-amygdala');if(!isAdapted){a.style.transition='all 2s ease';a.setAttribute('fill','rgba(255,92,92,.04)');a.setAttribute('stroke','rgba(255,92,92,.12)');a.style.filter='drop-shadow(0 0 2px rgba(255,92,92,.1))';this.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>편도체 반응이 약해졌습니다 — Rejection Therapy의 원리!`;isAdapted=true}else{a.setAttribute('fill','rgba(255,92,92,.15)');a.setAttribute('stroke','rgba(255,92,92,.4)');a.style.filter='';this.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>반복 노출 시 변화 보기`;isAdapted=false}});
+</script>
+</body>
+</html>
