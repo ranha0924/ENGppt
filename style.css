@@ -51,7 +51,7 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 .contents-card{display:flex;flex-direction:column;gap:8px;padding:28px 24px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;text-decoration:none;color:var(--text);transition:transform .3s,box-shadow .3s}
 .contents-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08);border-color:rgba(91,58,231,.2)}
 .contents-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#fff;background:var(--purple);width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;letter-spacing:0}
-.contents-name{font-family:'Syne',sans-serif;font-weight:700;font-size:16px}
+.contents-name{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;line-height:1.5}
 .contents-badge{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:4px;display:inline-block}
 .badge-required{background:rgba(91,58,231,.1);color:var(--purple)}
 .badge-bonus{background:rgba(34,197,94,.1);color:var(--green)}
@@ -63,7 +63,7 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 .vocab-table tbody tr:hover{background:rgba(91,58,231,.03)}
 .vocab-table tbody tr:hover td:first-child{color:var(--purple)}
 .vocab-table td{padding:16px 12px 16px 0;vertical-align:top}
-.vocab-table td:first-child{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;min-width:150px;white-space:nowrap}
+.vocab-table td:first-child{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;min-width:150px;white-space:nowrap;line-height:1.5;padding-bottom:18px}
 .vocab-table td:nth-child(2){font-size:14px;color:var(--text-sub);min-width:130px}
 .syn-tag,.ant-tag{display:inline-block;font-size:12px;padding:3px 10px;border-radius:20px;margin:2px 4px 2px 0;font-weight:500}
 .syn-tag{background:rgba(91,58,231,.07);color:var(--purple)}
@@ -131,7 +131,7 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 .grammar-card{min-width:260px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:24px;scroll-snap-align:start;flex-shrink:0;transition:transform .3s,box-shadow .3s}
 .grammar-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
 .grammar-card .grammar-tag{font-family:'JetBrains Mono',monospace;font-size:11px;background:rgba(91,58,231,.08);color:var(--purple);display:inline-block;padding:3px 10px;border-radius:6px;margin-bottom:12px}
-.grammar-card h4{font-family:'Syne',sans-serif;font-size:16px;margin-bottom:8px}
+.grammar-card h4{font-family:'Syne',sans-serif;font-size:16px;margin-bottom:8px;line-height:1.5}
 .grammar-card p{font-size:13px;color:var(--text-sub);line-height:1.6}
 .grammar-example{margin-top:12px;padding:10px 12px;background:rgba(91,58,231,.04);border-radius:8px;font-size:12px;line-height:1.7;color:var(--text-sub);border-left:2px solid rgba(91,58,231,.2)}
 .grammar-example strong{color:var(--purple)}
