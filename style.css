@@ -175,13 +175,25 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 
 /* BRAIN SECTION */
 #brain-section{background:var(--dark-bg);padding:120px 0;max-width:100%;margin:0;color:#fff;position:relative;overflow:hidden}
+#brain-section>div{max-width:1100px;margin:0 auto}
 #brain-section .section-label{color:var(--coral)}
 #brain-section h2{color:#fff}
 
 .brain-intro{font-size:clamp(14px,1.8vw,17px);color:rgba(255,255,255,.6);line-height:1.8;max-width:600px;margin:-24px auto 0}
 .brain-intro strong{color:rgba(255,255,255,.9)}
 
-.brain-flow{max-width:680px;margin:60px auto 0;display:flex;flex-direction:column;align-items:center;gap:0}
+.brain-flow{max-width:680px;margin:60px auto 0;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 20px}
+
+/* BRAIN TIMELINE BAR */
+.brain-timeline-bar{width:100%;margin-bottom:48px;position:relative;padding:0 24px}
+.btb-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,.4);text-align:left;margin-bottom:16px;letter-spacing:.5px}
+.btb-line{height:3px;background:linear-gradient(90deg,#FF5C5C,#FF9F43 45%,#3B82F6);border-radius:2px;position:relative}
+.btb-points{position:relative;height:32px;margin-top:-2px}
+.btb-point{position:absolute;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}
+.btb-point::before{content:'';width:12px;height:12px;border-radius:50%;background:var(--dark-bg);border:3px solid rgba(255,255,255,.5);display:block}
+.btb-point span{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,.5);margin-top:4px;white-space:nowrap}
+.btb-regions{position:relative;height:24px;margin-top:4px}
+.btb-region{position:absolute;transform:translateX(-50%);font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--c);white-space:nowrap}
 
 .brain-card{background:var(--dark-card);border:1px solid rgba(255,255,255,.08);border-left:4px solid var(--accent);border-radius:16px;padding:32px;width:100%;text-align:left;transition:transform .3s,box-shadow .3s}
 .brain-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
