@@ -1,7 +1,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#F6F4F0;--text:#1a1a1a;--text-sub:#6b6b6b;--purple:#5B3AE7;--coral:#FF5C5C;--orange:#FF9F43;--blue:#3B82F6;--green:#22c55e;--card-bg:#FFFFFF;--card-border:rgba(0,0,0,0.06);--nav-bg:rgba(246,244,240,0.72);--dark-bg:#0C0F1A;--dark-card:#161A2B}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;margin:0;padding:0}
 
 #progress-bar{position:fixed;top:0;left:0;height:3px;z-index:9999;background:linear-gradient(90deg,var(--purple),var(--coral));width:0%;transition:width .1s linear}
 
@@ -20,7 +20,7 @@ nav.dark-mode .links a.active{color:#fff}
 nav.dark-mode .links a.active::after{background:var(--coral)}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:0 24px}
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:0 24px;width:100%}
 .hero-gradient{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 20% 30%,rgba(91,58,231,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 70%,rgba(255,92,92,.10) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(255,159,67,.06) 0%,transparent 60%);mask-image:linear-gradient(180deg,#000 70%,transparent);-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent)}
 #hero h1{font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:clamp(48px,8vw,96px);line-height:1.05;letter-spacing:-3px;position:relative;z-index:1;background:linear-gradient(135deg,var(--text),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 #hero .subtitle{font-size:clamp(15px,2vw,18px);color:var(--text-sub);margin-top:20px;font-weight:400;position:relative;z-index:1;max-width:500px}
