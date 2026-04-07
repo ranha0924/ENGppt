@@ -136,7 +136,7 @@
       <span class="hl-grammar">By deliberately getting yourself rejected</span>, you'll grow a thicker skin <span class="hl-grammar">that will allow</span> you to take on much more in life, <span class="hl-grammar">thus making</span> you more successful at dealing with unfavorable circumstances.
     </blockquote>
     <div class="quote-mark closing">"</div>
-    <p class="quote-translation"><strong>직역:</strong> 의도적으로 스스로 거절당하는 상황에 놓이게 함으로써, 여러분은 더 두꺼운 피부를 기르게 될 것이고, 그 피부는 인생에서 훨씬 더 많은 것을 떠맡을 수 있게 해줄 것이며, 그리하여 호의적이지 않은 상황에 더 성공적으로 대처하게 만들 것이다.</p>
+    <p class="quote-translation"><strong>직역:</strong> 의도적으로 자신을 거절당하는 상황에 놓이게 함으로써, 여러분은 더 두꺼운 피부를 기르게 될 것이고, 그 피부는 인생에서 훨씬 더 많은 것을 떠맡을 수 있게 해줄 것이며, 그리하여 호의적이지 않은 상황에 더 성공적으로 대처하게 만들 것이다.</p>
     <p class="quote-translation quote-free"><strong>의역:</strong> 일부러 거절에 부딪혀 보면, 거절에 강해지고 더 많은 도전을 할 수 있게 되어, 어려운 상황도 잘 헤쳐나갈 수 있게 된다.</p>
     <div class="sentence-structure">
       <div class="ss-title">문장 구조 분해</div>
@@ -201,27 +201,6 @@
   <div class="timeline reveal" id="timeline"></div>
   <div class="gist-card reveal"><div class="gist-label">요지 (Main Idea)</div>거절을 피하지 말고, rejection therapy를 통해 의도적으로 거절에 노출됨으로써 더 강한 사람이 되자.</div>
 
-  <div class="tip-card reveal">
-    <div class="tip-label">문제 포인트 & 핵심 어구</div>
-    <div class="tip-grid">
-      <div class="tip-item">
-        <strong>주제문</strong>
-        <p>문장 08 — 글의 마지막 문장이 핵심 주장을 담고 있음</p>
-      </div>
-      <div class="tip-item">
-        <strong>핵심 어구</strong>
-        <p><code>grow a thicker skin</code> = 거절에 둔감해지다<br><code>Rejection Therapy</code> = 의도적 거절 노출 요법</p>
-      </div>
-      <div class="tip-item">
-        <strong>출제 포인트</strong>
-        <p>⑤번 어휘 적절성: <code>welcomed → rejected</code><br>get + O + p.p. 5형식 구조 파악</p>
-      </div>
-      <div class="tip-item">
-        <strong>응용 Tip</strong>
-        <p>"문제 해결" 구조: 문제(거절 회피) → 해결(Rejection Therapy) → 결과(더 강해짐)</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <div class="dark-transition"></div>
@@ -236,7 +215,7 @@
 
     <div class="brain-timeline-bar reveal">
       <div class="btb-label">거절을 당한 순간</div>
-      <div class="btb-line"></div>
+      <div class="btb-line"><div class="btb-fill btb-fill-1"></div><div class="btb-fill btb-fill-2"></div></div>
       <div class="btb-points">
         <div class="btb-point" style="left:0%"><span>0ms</span></div>
         <div class="btb-point" style="left:45%"><span>~400ms</span></div>
@@ -247,6 +226,8 @@
         <div class="btb-region" style="left:45%;--c:#FF9F43">전대상피질</div>
         <div class="btb-region" style="left:100%;--c:#3B82F6">전전두피질</div>
       </div>
+      <button class="btb-play-btn" id="btb-play-btn">체험하기</button>
+      <p class="btb-message" id="btb-message">이 시간 동안 눈을 한 번 깜빡이기도 어렵습니다</p>
     </div>
 
     <div class="brain-card reveal" style="--accent:#FF5C5C">
@@ -419,6 +400,54 @@ document.getElementById('adapt-btn').addEventListener('click',function(){
     }else{
       eraseAndType(CORRECT,WRONG,'answer-word-wrong',()=>{ showing='wrong'; });
     }
+  });
+})();
+
+/* Brain timeline bar animation */
+(function(){
+  const bar=document.querySelector('.brain-timeline-bar');
+  const points=bar.querySelectorAll('.btb-point');
+  const regions=bar.querySelectorAll('.btb-region');
+  const fill1=bar.querySelector('.btb-fill-1');
+  const fill2=bar.querySelector('.btb-fill-2');
+  const btn=document.getElementById('btb-play-btn');
+  const msg=document.getElementById('btb-message');
+  const COLORS=['#FF5C5C','#FF9F43','#3B82F6'];
+  let animating=false;
+
+  function reset(){
+    points.forEach(p=>{p.classList.remove('active');p.style.removeProperty('--dot-color')});
+    regions.forEach(r=>r.classList.remove('active'));
+    fill1.classList.remove('active');
+    fill2.classList.remove('active');
+    msg.classList.remove('visible');
+  }
+
+  function activate(i){
+    points[i].style.setProperty('--dot-color',COLORS[i]);
+    points[i].classList.add('active');
+    regions[i].classList.add('active');
+  }
+
+  btn.addEventListener('click',function(){
+    if(animating) return;
+    animating=true;
+    btn.disabled=true;
+    reset();
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      activate(0);
+      fill1.classList.add('active');
+      setTimeout(()=>{activate(1);fill2.classList.add('active')},400);
+      setTimeout(()=>{
+        activate(2);
+        setTimeout(()=>{
+          msg.classList.add('visible');
+          btn.textContent='다시 보기';
+          btn.disabled=false;
+          animating=false;
+        },1000);
+      },700);
+    }));
   });
 })();
 </script>
