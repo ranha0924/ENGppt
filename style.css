@@ -239,8 +239,8 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 #conclusion .section-label{color:var(--coral)}
 #conclusion h2{color:#fff}
 
-.conclusion-lines{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
-.conclusion-line{font-family:'Noto Sans KR',sans-serif;font-size:clamp(20px,3.5vw,32px);font-weight:700;line-height:1.4;letter-spacing:-0.5px;color:rgba(255,255,255,.9)}
+.conclusion-lines{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+.conclusion-line{font-family:'Noto Sans KR',sans-serif;font-size:clamp(15px,2.2vw,22px);font-weight:700;line-height:1.4;letter-spacing:-0.3px;color:rgba(255,255,255,.9);white-space:nowrap}
 .conclusion-line:nth-child(1){transition-delay:.1s}
 .conclusion-line:nth-child(2){transition-delay:.3s}
 .conclusion-line:nth-child(3){transition-delay:.5s}
@@ -289,7 +289,7 @@ footer span{font-family:'JetBrains Mono',monospace;color:var(--coral)}
   .bs-table td:first-child{padding-top:12px;min-width:0}
   .bs-table thead{display:none}
   .brain-summary{padding:24px 20px}
-  .conclusion-line{font-size:clamp(18px,4vw,24px)}
+  .conclusion-line{font-size:clamp(13px,3.2vw,18px);white-space:normal}
   .tip-grid{grid-template-columns:1fr}
   .text-structure{flex-direction:column}
   .ss-flow{flex-direction:column}.ss-connector{justify-content:center}
