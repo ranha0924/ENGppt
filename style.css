@@ -178,33 +178,36 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 #brain-section .section-label{color:var(--coral)}
 #brain-section h2{color:#fff}
 
-.brain-timeline{max-width:700px;margin:0 auto;text-align:center}
+.brain-intro{font-size:clamp(14px,1.8vw,17px);color:rgba(255,255,255,.6);line-height:1.8;max-width:600px;margin:-24px auto 0}
+.brain-intro strong{color:rgba(255,255,255,.9)}
 
-.brain-stage{min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px 20px}
-.brain-stage{will-change:opacity,transform}
-.brain-stage.stage-enter{animation:fadeSlideIn .5s ease}
+.brain-flow{max-width:680px;margin:60px auto 0;display:flex;flex-direction:column;align-items:center;gap:0}
+
+.brain-card{background:var(--dark-card);border:1px solid rgba(255,255,255,.08);border-left:4px solid var(--accent);border-radius:16px;padding:32px;width:100%;text-align:left;transition:transform .3s,box-shadow .3s}
+.brain-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+
+.bc-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.bc-step{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bc-step-check{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bc-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:.5px;font-weight:600}
+
+.bc-title{font-family:'Syne',sans-serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#fff;margin-bottom:12px;line-height:1.3}
+.bc-desc{font-size:15px;line-height:1.8;color:rgba(255,255,255,.7)}
+.bc-desc strong{color:#fff}
+.bc-region-small{margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.5px}
+
+.brain-arrow{color:rgba(255,255,255,.25);font-size:24px;padding:12px 0;text-align:center}
+.arrow-then{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--green);padding:20px 0;letter-spacing:.5px}
+
+.brain-adapt-area{width:100%;text-align:center;margin-top:8px}
+.adapt-btn{display:inline-flex;align-items:center;gap:10px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:var(--green);padding:16px 32px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .3s;font-family:'Noto Sans KR',sans-serif}
+.adapt-btn:hover{background:rgba(34,197,94,.2);border-color:rgba(34,197,94,.5);transform:translateY(-2px)}
+
+.brain-card-adapt{display:none;margin-top:16px}
+.brain-card-adapt.show{display:block;animation:fadeSlideIn .5s ease}
 @keyframes fadeSlideIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-.brain-big-number{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(40px,8vw,72px);letter-spacing:-2px;line-height:1.1}
-.brain-region-name{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(16px,2.5vw,22px);margin-bottom:8px}
-.brain-desc{font-size:15px;line-height:1.8;color:rgba(255,255,255,.75);max-width:560px}
-.brain-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
-.brain-tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 12px;border:1px solid;border-radius:20px;opacity:.8}
-
-.brain-step-indicators{display:flex;align-items:center;justify-content:center;gap:0;margin:32px auto 24px}
-.step-group{display:flex;flex-direction:column;align-items:center;gap:6px}
-.step-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.3);letter-spacing:.5px}
-.step-dot{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.25);cursor:pointer;transition:all .3s;padding:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.step-dot.active{background:var(--coral);border-color:var(--coral);box-shadow:0 0 12px rgba(255,92,92,.4)}
-.step-line{width:40px;height:2px;background:rgba(255,255,255,.12);align-self:flex-start;margin-top:8px}
-
-.brain-nav{display:flex;justify-content:center;gap:12px;margin-bottom:20px}
-.brain-nav-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;padding:10px 24px;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;font-family:'Noto Sans KR',sans-serif}
-.brain-nav-btn:hover:not(:disabled){background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2)}
-.brain-nav-btn:disabled{opacity:.3;cursor:not-allowed}
-
-.adapt-btn{margin:0 auto;display:inline-flex;align-items:center;gap:10px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:var(--green);padding:14px 28px;border-radius:12px;font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;font-family:'Noto Sans KR',sans-serif}
-.adapt-btn:hover{background:rgba(34,197,94,.18);border-color:rgba(34,197,94,.5)}
+.bc-connection{margin-top:16px;padding:10px 16px;background:rgba(34,197,94,.1);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);font-weight:600;display:inline-block}
 
 /* CONCLUSION */
 #conclusion{background:linear-gradient(180deg,var(--dark-bg) 0%,#101425 100%);padding:120px 0;max-width:100%;margin:0;color:#fff;position:relative;text-align:center}
@@ -227,7 +230,7 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
   .reveal{transition:opacity .4s ease}
   .hero-gradient{animation:none}
   .scroll-hint{animation:none}
-  .brain-stage.stage-enter{animation:none}
+  .brain-card-adapt.show{animation:none}
   .cursor-blink{animation:none;opacity:1}
   .contents-card,.grammar-card{transition:none}
 }
@@ -255,9 +258,8 @@ footer span{font-family:'JetBrains Mono',monospace;color:var(--coral)}
   .answer-card{padding:28px 20px}
   .answer-sentence{padding:16px 20px;font-size:16px}
   .contents-grid{grid-template-columns:repeat(2,1fr)}
-  .brain-stage{min-height:260px;padding:24px 12px}
-  .brain-nav-btn{padding:12px 20px;min-height:44px}
-  .step-dot{width:20px;height:20px}
+  .brain-card{padding:24px 20px}
+  .brain-flow{margin-top:40px}
   .conclusion-line{font-size:clamp(18px,4vw,24px)}
   .tip-grid{grid-template-columns:1fr}
   .text-structure{flex-direction:column}

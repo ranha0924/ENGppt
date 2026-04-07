@@ -198,24 +198,58 @@
 <section id="brain-section">
   <div class="reveal">
     <div class="section-label">05 — 뇌과학</div>
-    <h2>거절과<br>뇌의 반응</h2>
+    <h2>거절이 아픈 건<br>당연하다</h2>
+    <p class="brain-intro">누군가에게 거절당하면 왜 이렇게 힘들까요?<br>그건 여러분이 약해서가 아니라, <strong>뇌가 원래 그렇게 만들어져 있기 때문</strong>입니다.</p>
   </div>
-  <div class="brain-timeline reveal">
-    <div class="brain-stage" id="brain-stage">
-      <!-- Dynamically filled by JS -->
+
+  <div class="brain-flow">
+
+    <div class="brain-card reveal" style="--accent:#FF5C5C">
+      <div class="bc-header">
+        <span class="bc-step">1</span>
+        <span class="bc-label">거절당하는 순간</span>
+      </div>
+      <h3 class="bc-title">생각보다 먼저, 감정이 터진다</h3>
+      <p class="bc-desc">거절 신호가 들어오면 뇌는 <strong>0.4초 만에</strong> "이건 위협이다!"라고 판단합니다. 생각할 틈도 없이요. 원시시대에는 무리에서 쫓겨나면 곧 죽음이었기 때문에, 거절 = 위험이라는 본능이 아직 남아있는 겁니다.</p>
+      <div class="bc-region-small">관련 영역: 편도체(Amygdala)</div>
     </div>
-    <div class="brain-step-indicators" id="brain-indicators">
-      <div class="step-group"><button class="step-dot active" data-step="0"></button><span class="step-label">Step 1</span></div>
-      <div class="step-line"></div>
-      <div class="step-group"><button class="step-dot" data-step="1"></button><span class="step-label">Step 2</span></div>
-      <div class="step-line"></div>
-      <div class="step-group"><button class="step-dot" data-step="2"></button><span class="step-label">Step 3</span></div>
+
+    <div class="brain-arrow reveal">&#8595;</div>
+
+    <div class="brain-card reveal" style="--accent:#FF9F43">
+      <div class="bc-header">
+        <span class="bc-step">2</span>
+        <span class="bc-label">그래서 진짜 아프다</span>
+      </div>
+      <h3 class="bc-title">"마음이 아프다"는 비유가 아니다</h3>
+      <p class="bc-desc">거절당할 때 활성화되는 뇌 부위가 <strong>팔이 부러졌을 때와 똑같은 부위</strong>입니다. 뇌는 사회적 거절과 물리적 고통을 구분하지 못합니다. 그래서 거절당하면 실제로 가슴이 아프고, 속이 쓰린 거예요.</p>
+      <div class="bc-region-small">관련 영역: 전대상피질(ACC)</div>
     </div>
-    <div class="brain-nav">
-      <button class="brain-nav-btn" id="brain-prev" disabled>← 이전</button>
-      <button class="brain-nav-btn" id="brain-next">다음 →</button>
+
+    <div class="brain-arrow reveal">&#8595;</div>
+
+    <div class="brain-card reveal" style="--accent:#3B82F6">
+      <div class="bc-header">
+        <span class="bc-step">3</span>
+        <span class="bc-label">이성으로 버텨보려 하지만</span>
+      </div>
+      <h3 class="bc-title">"괜찮아, 별거 아니야"가 안 먹히는 이유</h3>
+      <p class="bc-desc">이성을 담당하는 전두엽은 감정보다 <strong>0.3초나 느립니다</strong>. 감정이 이미 폭발한 뒤에야 겨우 "진정해"라고 말하는 셈이죠. 거절 앞에서 합리적이기 어려운 건 이 때문입니다.</p>
+      <div class="bc-region-small">관련 영역: 전두엽(PFC)</div>
     </div>
-    <button class="adapt-btn" id="adapt-btn">반복 노출 시 변화 보기 →</button>
+
+    <div class="brain-adapt-area reveal">
+      <button class="adapt-btn" id="adapt-btn">그런데 희망이 있다 — 클릭해서 확인</button>
+      <div class="brain-card brain-card-adapt" id="adapt-card" style="--accent:#22c55e">
+        <div class="bc-header">
+          <span class="bc-step-check">&#10003;</span>
+          <span class="bc-label">Rejection Therapy의 원리</span>
+        </div>
+        <h3 class="bc-title">일부러 거절당하면, 점점 안 아파진다</h3>
+        <p class="bc-desc">거절을 반복 경험하면 뇌의 "위협!" 반응이 점차 줄어듭니다. 처음엔 무섭지만, 반복할수록 "아 이 정도는 괜찮네"가 됩니다. 이게 바로 본문에서 말하는 <strong>"grow a thicker skin"</strong>의 과학적 근거예요.</p>
+        <div class="bc-connection">= 본문 8번 문장의 핵심 근거</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -289,122 +323,12 @@ secs.forEach(id=>{const el=document.getElementById(id);if(el)navObs.observe(el)}
 const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
 
-/* Brain Timeline Sequence */
-const brainStages=[
-  {
-    big:"400ms",
-    countUp:true,countTarget:400,countSuffix:"ms",
-    region:"Amygdala (편도체)",
-    color:"#FF5C5C",
-    desc:"거절 신호가 들어오면, 편도체가 의식적 사고보다 빠르게 이를 '위협'으로 분류합니다. 과거 집단에서의 분리가 곧 죽음을 의미했던 시절의 생존 본능입니다.",
-    tags:["위협 감지","감정 반응 촉발","투쟁-도피 활성화"]
-  },
-  {
-    big:"= Physical Pain",
-    countUp:false,
-    region:"Anterior Cingulate Cortex (전대상피질)",
-    color:"#FF9F43",
-    desc:"사회적 거절 시 활성화되며, 신체적 고통과 동일한 신경 경로를 사용합니다. 뇌는 거절을 실제 물리적 고통처럼 처리합니다. '마음이 아프다'는 표현이 과학적으로도 정확한 셈입니다.",
-    tags:["사회적 고통 = 신체적 고통","동일 신경 경로"]
-  },
-  {
-    big:"300ms 뒤",
-    countUp:false,
-    region:"Prefrontal Cortex (전두엽)",
-    color:"#3B82F6",
-    desc:"편도체가 경보를 울린 뒤 이성적 판단을 시도합니다. 하지만 편도체가 이미 감정 반응을 촉발한 이후라 종종 무력합니다. '괜찮아, 별거 아니야'라는 합리화가 잘 안 되는 이유입니다.",
-    tags:["이성적 판단 시도","그러나 이미 늦음","감정이 이성을 압도"]
-  }
-];
-
-const adaptStage={
-  big:"반복 노출 → 적응",
-  countUp:false,
-  region:"Rejection Therapy",
-  color:"#22c55e",
-  desc:"Rejection Therapy처럼 반복적으로 거절에 노출되면, 편도체의 위협 반응이 점차 약해집니다. 이것이 본문에서 말하는 <em>'grow a thicker skin'</em>의 과학적 근거입니다.",
-  tags:["편도체 반응 약화","둔감화","grow a thicker skin","본문 8번 문장과 직결"]
-};
-
-let currentBrainStep=0;
-let showingAdapt=false;
-const brainStageEl=document.getElementById('brain-stage');
-const brainIndicators=document.getElementById('brain-indicators');
-const prevBtn=document.getElementById('brain-prev');
-const nextBtn=document.getElementById('brain-next');
-const adaptBtn=document.getElementById('adapt-btn');
-
-function renderBrainStage(stage,animate){
-  brainStageEl.classList.remove('stage-enter');
-  if(animate){
-    void brainStageEl.offsetWidth;
-    brainStageEl.classList.add('stage-enter');
-  }
-  let bigHtml;
-  if(stage.countUp){
-    bigHtml=`<div class="brain-big-number" style="color:${stage.color}" data-count-target="${stage.countTarget}" data-count-suffix="${stage.countSuffix}">0${stage.countSuffix}</div>`;
-  }else{
-    bigHtml=`<div class="brain-big-number" style="color:${stage.color}">${stage.big}</div>`;
-  }
-  brainStageEl.innerHTML=`
-    ${bigHtml}
-    <div class="brain-region-name" style="color:${stage.color}">${stage.region}</div>
-    <p class="brain-desc">${stage.desc}</p>
-    <div class="brain-tags">${stage.tags.map(t=>`<span class="brain-tag" style="border-color:${stage.color};color:${stage.color}">${t}</span>`).join('')}</div>
-  `;
-  if(stage.countUp){
-    const numEl=brainStageEl.querySelector('.brain-big-number');
-    countUp(numEl,stage.countTarget,stage.countSuffix);
-  }
-}
-
-function updateBrainUI(){
-  const dots=brainIndicators.querySelectorAll('.step-dot');
-  dots.forEach((d,i)=>d.classList.toggle('active',i===currentBrainStep));
-  prevBtn.disabled=currentBrainStep===0;
-  nextBtn.disabled=currentBrainStep===brainStages.length-1;
-  adaptBtn.style.display=currentBrainStep===brainStages.length-1&&!showingAdapt?'inline-flex':'none';
-  if(showingAdapt){
-    prevBtn.disabled=false;
-    nextBtn.disabled=true;
-    dots.forEach(d=>d.classList.remove('active'));
-    adaptBtn.style.display='none';
-  }
-}
-
-function goToStep(step){
-  showingAdapt=false;
-  currentBrainStep=step;
-  renderBrainStage(brainStages[step],true);
-  updateBrainUI();
-}
-
-prevBtn.addEventListener('click',()=>{
-  if(showingAdapt){showingAdapt=false;renderBrainStage(brainStages[currentBrainStep],true);updateBrainUI();return}
-  if(currentBrainStep>0)goToStep(currentBrainStep-1);
+/* Adapt button toggle */
+document.getElementById('adapt-btn').addEventListener('click',function(){
+  const card=document.getElementById('adapt-card');
+  card.classList.toggle('show');
+  this.style.display=card.classList.contains('show')?'none':'inline-flex';
 });
-nextBtn.addEventListener('click',()=>{if(currentBrainStep<brainStages.length-1)goToStep(currentBrainStep+1)});
-brainIndicators.querySelectorAll('.step-dot').forEach(dot=>{dot.addEventListener('click',()=>goToStep(+dot.dataset.step))});
-
-adaptBtn.addEventListener('click',()=>{
-  showingAdapt=true;
-  renderBrainStage(adaptStage,true);
-  updateBrainUI();
-});
-
-renderBrainStage(brainStages[0],false);
-updateBrainUI();
-
-/* Keyboard navigation for brain section */
-document.addEventListener('keydown',e=>{
-  const brainRect=document.getElementById('brain-section').getBoundingClientRect();
-  if(brainRect.top<window.innerHeight&&brainRect.bottom>0){
-    if(e.key==='ArrowRight'&&!showingAdapt&&currentBrainStep<brainStages.length-1){goToStep(currentBrainStep+1);e.preventDefault()}
-    if(e.key==='ArrowLeft'){if(showingAdapt){showingAdapt=false;renderBrainStage(brainStages[currentBrainStep],true);updateBrainUI()}else if(currentBrainStep>0){goToStep(currentBrainStep-1)}e.preventDefault()}
-  }
-});
-
-function countUp(el,target,suffix){let cur=0;const step=target/30;const iv=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(iv)}el.textContent=Math.round(cur)+suffix},25)}
 </script>
 </body>
 </html>
