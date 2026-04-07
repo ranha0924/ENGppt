@@ -27,6 +27,7 @@
   <div class="hero-gradient"></div>
   <h1>Don't Fear<br>Rejection</h1>
   <p class="subtitle"><span id="typed-text"></span><span class="cursor-blink"></span></p>
+  <p class="hero-summary reveal">거절을 피하려는 태도의 문제점과 이를 극복하기 위한 Rejection Therapy</p>
   <p class="hero-topic reveal">2026학년도 1학기 1차 모의고사 · 9번 지문</p>
   <div class="scroll-hint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
 </section>
@@ -67,8 +68,9 @@
   </div>
   <div class="answer-card reveal">
     <div class="answer-sentence">
-      By deliberately getting yourself <span class="answer-wrong">welcomed</span> <span class="answer-arrow">→</span> <span class="answer-correct">rejected</span>, you'll grow a thicker skin that will allow you to take on much more in life, thus making you more successful at dealing with unfavorable circumstances.
+      By deliberately getting yourself <span id="answer-word-area"><span id="answer-word" class="answer-word-wrong">welcomed</span><span id="answer-cursor" class="answer-cursor hidden"></span></span>, you'll grow a thicker skin that will allow you to take on much more in life, thus making you more successful at dealing with unfavorable circumstances.
     </div>
+    <div class="answer-btn-wrap"><button id="answer-reveal-btn" class="answer-reveal-btn">정답 보기</button></div>
     <div class="answer-explanations">
       <div class="answer-item">
         <span class="answer-bullet">1</span>
@@ -373,6 +375,62 @@ document.getElementById('adapt-btn').addEventListener('click',function(){
   card.classList.toggle('show');
   this.style.display=card.classList.contains('show')?'none':'inline-flex';
 });
+
+/* Answer typing animation */
+(function(){
+  const wordEl=document.getElementById('answer-word');
+  const cursorEl=document.getElementById('answer-cursor');
+  const btn=document.getElementById('answer-reveal-btn');
+  const WRONG='welcomed', CORRECT='rejected';
+  const DEL_MS=80, TYPE_MS=80, PAUSE_MS=300;
+  let showing='wrong'; // 'wrong' or 'correct'
+
+  function eraseAndType(from,to,toClass,cb){
+    btn.disabled=true;
+    cursorEl.classList.remove('hidden');
+    wordEl.classList.remove('glow');
+    let text=from;
+    // erase from right
+    const eraseInterval=setInterval(()=>{
+      text=text.slice(0,-1);
+      wordEl.textContent=text;
+      if(text.length===0){
+        clearInterval(eraseInterval);
+        // pause with empty + cursor
+        setTimeout(()=>{
+          let idx=0;
+          wordEl.className=toClass;
+          // type new word
+          const typeInterval=setInterval(()=>{
+            idx++;
+            wordEl.textContent=to.slice(0,idx);
+            if(idx>=to.length){
+              clearInterval(typeInterval);
+              cursorEl.classList.add('hidden');
+              if(toClass==='answer-word-correct') wordEl.classList.add('glow');
+              btn.disabled=false;
+              if(cb)cb();
+            }
+          },TYPE_MS);
+        },PAUSE_MS);
+      }
+    },DEL_MS);
+  }
+
+  btn.addEventListener('click',function(){
+    if(showing==='wrong'){
+      eraseAndType(WRONG,CORRECT,'answer-word-correct',()=>{
+        showing='correct';
+        btn.textContent='다시 보기';
+      });
+    }else{
+      eraseAndType(CORRECT,WRONG,'answer-word-wrong',()=>{
+        showing='wrong';
+        btn.textContent='정답 보기';
+      });
+    }
+  });
+})();
 </script>
 </body>
 </html>
