@@ -94,6 +94,11 @@
         <p>환영받는(<span class="answer-wrong-inline">welcomed</span>)이 아니라 거절당하는(<span class="answer-correct-inline">rejected</span>)이 적절</p>
       </div>
     </div>
+    <div class="answer-translation" id="answer-translation">
+      <p class="answer-trans-label">문장 해석</p>
+      <p class="answer-trans-text" id="answer-trans-wrong">의도적으로 자신이 <strong class="answer-wrong-inline">환영받게</strong> 함으로써, 당신은 삶에서 훨씬 더 많은 것을 감당할 수 있게 해주는 더 두꺼운 피부를 기르게 될 것이고, 따라서 불리한 상황에 대처하는 데 더 성공적이 될 것이다.</p>
+      <p class="answer-trans-text hidden" id="answer-trans-correct">의도적으로 자신이 <strong class="answer-correct-inline">거절당하게</strong> 함으로써, 당신은 삶에서 훨씬 더 많은 것을 감당할 수 있게 해주는 더 두꺼운 피부를 기르게 될 것이고, 따라서 불리한 상황에 대처하는 데 더 성공적이 될 것이다.</p>
+    </div>
   </div>
 </section>
 
@@ -371,6 +376,8 @@ document.getElementById('adapt-btn').addEventListener('click',function(){
 (function(){
   const wordEl=document.getElementById('answer-word');
   const cursorEl=document.getElementById('answer-cursor');
+  const transWrong=document.getElementById('answer-trans-wrong');
+  const transCorrect=document.getElementById('answer-trans-correct');
   const WRONG='welcomed', CORRECT='rejected';
   const DEL_MS=80, TYPE_MS=80, PAUSE_MS=300;
   let showing='wrong', animating=false;
@@ -407,9 +414,9 @@ document.getElementById('adapt-btn').addEventListener('click',function(){
   wordEl.addEventListener('click',function(){
     if(animating) return;
     if(showing==='wrong'){
-      eraseAndType(WRONG,CORRECT,'answer-word-correct',()=>{ showing='correct'; });
+      eraseAndType(WRONG,CORRECT,'answer-word-correct',()=>{ showing='correct'; transWrong.classList.add('hidden'); transCorrect.classList.remove('hidden'); });
     }else{
-      eraseAndType(CORRECT,WRONG,'answer-word-wrong',()=>{ showing='wrong'; });
+      eraseAndType(CORRECT,WRONG,'answer-word-wrong',()=>{ showing='wrong'; transCorrect.classList.add('hidden'); transWrong.classList.remove('hidden'); });
     }
   });
 })();

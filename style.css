@@ -100,6 +100,11 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 .answer-wrong-inline{color:var(--coral);text-decoration:line-through}
 .answer-correct-inline{color:var(--blue);font-weight:600}
 
+.answer-translation{margin-top:20px;padding:20px 24px;background:rgba(91,58,231,.04);border-radius:12px;border:1px solid var(--card-border)}
+.answer-trans-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--purple);opacity:.6;margin-bottom:10px}
+.answer-trans-text{font-size:15px;line-height:1.9;color:var(--text-sub);transition:opacity .3s}
+.answer-trans-text.hidden{display:none}
+
 .structure-visual{display:grid;grid-template-columns:repeat(3,auto);gap:4px 16px;margin-top:12px;padding:12px 16px;background:rgba(91,58,231,.04);border-radius:8px;width:fit-content}
 .sv-part{font-family:'Noto Sans KR',sans-serif;font-weight:600;font-size:15px;text-align:center;line-height:1.8}
 .sv-v{color:var(--coral)}
