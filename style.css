@@ -33,7 +33,8 @@ nav.dark-mode .links a.active::after{background:var(--coral)}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
 
 /* SECTIONS */
-section{padding:120px 0;max-width:1100px;margin:0 auto}
+section{padding:120px 40px;max-width:none;margin:0 auto}
+section>*{max-width:1100px;margin-left:auto;margin-right:auto}
 section .section-label{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:3px;color:var(--purple);margin-bottom:12px;font-weight:500}
 section h2{font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:clamp(32px,5vw,48px);letter-spacing:-1.5px;margin-bottom:48px;line-height:1.15}
 
@@ -174,8 +175,7 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 .dark-transition{height:120px;background:linear-gradient(180deg,var(--bg),var(--dark-bg));margin:0;padding:0}
 
 /* BRAIN SECTION */
-#brain-section{background:var(--dark-bg);padding:120px 0;max-width:100%;margin:0;color:#fff;position:relative;overflow:hidden}
-#brain-section>div{max-width:1100px;margin:0 auto}
+#brain-section{background:var(--dark-bg);padding:120px 40px;max-width:none;margin:0;color:#fff;position:relative;overflow:hidden}
 #brain-section .section-label{color:var(--coral)}
 #brain-section h2{color:#fff}
 
@@ -235,7 +235,7 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 .bs-table td:first-child{color:rgba(255,255,255,.85);font-weight:500;min-width:200px}
 
 /* CONCLUSION */
-#conclusion{background:linear-gradient(180deg,var(--dark-bg) 0%,#101425 100%);padding:120px 0;max-width:100%;margin:0;color:#fff;position:relative;text-align:center}
+#conclusion{background:linear-gradient(180deg,var(--dark-bg) 0%,#101425 100%);padding:120px 40px;max-width:none;margin:0;color:#fff;position:relative;text-align:center}
 #conclusion .section-label{color:var(--coral)}
 #conclusion h2{color:#fff}
 
@@ -276,9 +276,9 @@ footer span{font-family:'JetBrains Mono',monospace;color:var(--coral)}
 }
 @media(max-width:768px){
   nav{padding:0 16px}nav .links{gap:16px}nav .links a{font-size:11px}
-  section{padding:80px 0}
-  #brain-section{padding:80px 0}
-  #conclusion{padding:80px 0}
+  section{padding:80px 20px}
+  #brain-section{padding:80px 20px}
+  #conclusion{padding:80px 20px}
   .key-quote{padding:40px 24px}
   .answer-card{padding:28px 20px}
   .answer-sentence{padding:16px 20px;font-size:16px}
