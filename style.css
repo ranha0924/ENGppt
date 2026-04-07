@@ -202,10 +202,8 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 .brain-timeline-bar{width:100%;margin-bottom:48px;position:relative;padding:0 24px}
 .btb-label{font-size:11px;color:rgba(255,255,255,.4);text-align:left;margin-bottom:16px;letter-spacing:.5px;font-weight:700}
 .btb-line{height:3px;background:rgba(255,255,255,.15);border-radius:2px;position:relative}
-.btb-fill{position:absolute;top:0;height:100%;border-radius:2px;transform:scaleX(0);transform-origin:left center;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.btb-fill{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:2px;background:linear-gradient(90deg,#FF5C5C,#FF9F43 45%,#3B82F6);transform:scaleX(0);transform-origin:left center;transition:transform .7s linear}
 .btb-fill.active{transform:scaleX(1)}
-.btb-fill-1{left:0;width:45%;background:#FF5C5C}
-.btb-fill-2{left:45%;width:55%;background:linear-gradient(90deg,#FF9F43,#3B82F6)}
 .btb-points{position:relative;height:32px;margin-top:-2px}
 .btb-point{position:absolute;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}
 .btb-point::before{content:'';width:12px;height:12px;border-radius:50%;background:var(--dark-bg);border:3px solid rgba(255,255,255,.15);display:block;transition:border-color .2s,box-shadow .3s}

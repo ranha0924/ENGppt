@@ -215,7 +215,7 @@
 
     <div class="brain-timeline-bar reveal">
       <div class="btb-label">거절을 당한 순간</div>
-      <div class="btb-line"><div class="btb-fill btb-fill-1"></div><div class="btb-fill btb-fill-2"></div></div>
+      <div class="btb-line"><div class="btb-fill" id="btb-fill"></div></div>
       <div class="btb-points">
         <div class="btb-point" style="left:0%"><span>0ms</span></div>
         <div class="btb-point" style="left:45%"><span>~400ms</span></div>
@@ -408,8 +408,7 @@ document.getElementById('adapt-btn').addEventListener('click',function(){
   const bar=document.querySelector('.brain-timeline-bar');
   const points=bar.querySelectorAll('.btb-point');
   const regions=bar.querySelectorAll('.btb-region');
-  const fill1=bar.querySelector('.btb-fill-1');
-  const fill2=bar.querySelector('.btb-fill-2');
+  const fill=document.getElementById('btb-fill');
   const btn=document.getElementById('btb-play-btn');
   const msg=document.getElementById('btb-message');
   const COLORS=['#FF5C5C','#FF9F43','#3B82F6'];
@@ -418,8 +417,7 @@ document.getElementById('adapt-btn').addEventListener('click',function(){
   function reset(){
     points.forEach(p=>{p.classList.remove('active');p.style.removeProperty('--dot-color')});
     regions.forEach(r=>r.classList.remove('active'));
-    fill1.classList.remove('active');
-    fill2.classList.remove('active');
+    fill.classList.remove('active');
     msg.classList.remove('visible');
   }
 
@@ -436,8 +434,8 @@ document.getElementById('adapt-btn').addEventListener('click',function(){
     reset();
     requestAnimationFrame(()=>requestAnimationFrame(()=>{
       activate(0);
-      fill1.classList.add('active');
-      setTimeout(()=>{activate(1);fill2.classList.add('active')},400);
+      fill.classList.add('active');
+      setTimeout(()=>activate(1),400);
       setTimeout(()=>{
         activate(2);
         setTimeout(()=>{
