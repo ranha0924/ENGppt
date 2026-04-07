@@ -7,7 +7,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text
 
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between;background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.05);transition:background .5s,border .5s}
 nav.dark-mode{background:rgba(12,15,26,.85);border-bottom-color:rgba(255,255,255,.06)}
-nav .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;letter-spacing:-.5px;transition:color .5s}
+nav .logo{font-family:'Noto Sans KR','Syne',sans-serif;font-weight:800;font-size:15px;letter-spacing:-.5px;transition:color .5s}
 nav.dark-mode .logo{color:#fff}
 nav .links{display:flex;gap:28px;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none}
 nav .links::-webkit-scrollbar{display:none}
@@ -33,7 +33,7 @@ nav.dark-mode .links a.active::after{background:var(--coral)}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
 
 /* SECTIONS */
-section{padding:120px 40px;max-width:1100px;margin:0 auto}
+section{padding:120px 0;max-width:1100px;margin:0 auto}
 section .section-label{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:3px;color:var(--purple);margin-bottom:12px;font-weight:500}
 section h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(32px,5vw,48px);letter-spacing:-1.5px;margin-bottom:48px;line-height:1.15}
 
@@ -174,7 +174,7 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 .dark-transition{height:120px;background:linear-gradient(180deg,var(--bg),var(--dark-bg));margin:0;padding:0}
 
 /* BRAIN SECTION */
-#brain-section{background:var(--dark-bg);padding:120px 40px 120px;max-width:100%;margin:0;color:#fff;position:relative;overflow:hidden}
+#brain-section{background:var(--dark-bg);padding:120px 0;max-width:100%;margin:0;color:#fff;position:relative;overflow:hidden}
 #brain-section .section-label{color:var(--coral)}
 #brain-section h2{color:#fff}
 
@@ -207,7 +207,7 @@ nav.dark-mode :focus-visible,.brain-timeline :focus-visible,#conclusion :focus-v
 .adapt-btn:hover{background:rgba(34,197,94,.18);border-color:rgba(34,197,94,.5)}
 
 /* CONCLUSION */
-#conclusion{background:linear-gradient(180deg,var(--dark-bg) 0%,#101425 100%);padding:120px 40px;max-width:100%;margin:0;color:#fff;position:relative;text-align:center}
+#conclusion{background:linear-gradient(180deg,var(--dark-bg) 0%,#101425 100%);padding:120px 0;max-width:100%;margin:0;color:#fff;position:relative;text-align:center}
 #conclusion .section-label{color:var(--coral)}
 #conclusion h2{color:#fff}
 
@@ -248,9 +248,9 @@ footer span{font-family:'JetBrains Mono',monospace;color:var(--coral)}
 }
 @media(max-width:768px){
   nav{padding:0 16px}nav .links{gap:16px}nav .links a{font-size:11px}
-  section{padding:80px 20px}
-  #brain-section{padding:80px 20px}
-  #conclusion{padding:80px 20px}
+  section{padding:80px 0}
+  #brain-section{padding:80px 0}
+  #conclusion{padding:80px 0}
   .key-quote{padding:40px 24px}
   .answer-card{padding:28px 20px}
   .answer-sentence{padding:16px 20px;font-size:16px}
