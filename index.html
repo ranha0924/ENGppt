@@ -227,7 +227,6 @@
         <div class="btb-region" style="left:100%;--c:#3B82F6">전전두피질</div>
       </div>
       <button class="btb-play-btn" id="btb-play-btn">체험하기</button>
-      <p class="btb-message" id="btb-message">이 시간 동안 눈을 한 번 깜빡이기도 어렵습니다</p>
     </div>
 
     <div class="brain-card reveal" style="--accent:#FF5C5C">
@@ -289,9 +288,11 @@
     <p class="conclusion-line reveal"><span class="conclusion-num">2</span>하지만 반복적 노출(Rejection Therapy)을 통해 뇌의 반응을 바꿀 수 있다</p>
     <p class="conclusion-line reveal"><span class="conclusion-num">3</span>두려워하지 말고 요청하라 — 거절당할수록 더 강해진다</p>
   </div>
-  <div class="conclusion-quote reveal">
-    <p>"By deliberately getting yourself rejected, you'll grow a thicker skin."</p>
-    <span class="conclusion-quote-kr">— 일부러 거절에 부딪혀라. 그러면 더 강해진다.</span>
+  <div class="conclusion-assembly" id="conclusion-assembly">
+    <p class="ca-line" id="ca-1">By deliberately getting yourself rejected,</p>
+    <p class="ca-line" id="ca-2">you'll grow <span class="ca-highlight">a thicker skin</span></p>
+    <p class="ca-line" id="ca-3">thus making you more successful at dealing with unfavorable circumstances.</p>
+    <p class="ca-kr" id="ca-kr">일부러 거절에 부딪혀라. 그러면 더 강해진다.</p>
   </div>
   <p class="conclusion-thanks reveal">감사합니다</p>
 </section>
@@ -345,7 +346,11 @@ const navbar=document.getElementById('navbar');
 const navObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.remove('active'));const l=document.querySelector(`nav .links a[href="#${e.target.id}"]`);if(l)l.classList.add('active');const darkSections=['brain-section','conclusion'];navbar.classList.toggle('dark-mode',darkSections.includes(e.target.id))}})},{threshold:.3});
 secs.forEach(id=>{const el=document.getElementById(id);if(el)navObs.observe(el)});
 
-/* Reveal on scroll */
+/* Reveal on scroll — with stagger delay per section */
+document.querySelectorAll('section').forEach(sec=>{
+  const els=sec.querySelectorAll('.reveal');
+  els.forEach((el,i)=>{el.style.transitionDelay=(i*0.1)+'s'});
+});
 const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
 
@@ -410,7 +415,6 @@ document.getElementById('adapt-btn').addEventListener('click',function(){
   const regions=bar.querySelectorAll('.btb-region');
   const fill=document.getElementById('btb-fill');
   const btn=document.getElementById('btb-play-btn');
-  const msg=document.getElementById('btb-message');
   const COLORS=['#FF5C5C','#FF9F43','#3B82F6'];
   let animating=false;
 
@@ -418,7 +422,6 @@ document.getElementById('adapt-btn').addEventListener('click',function(){
     points.forEach(p=>{p.classList.remove('active');p.style.removeProperty('--dot-color')});
     regions.forEach(r=>r.classList.remove('active'));
     fill.classList.remove('active');
-    msg.classList.remove('visible');
   }
 
   function activate(i){
@@ -439,14 +442,33 @@ document.getElementById('adapt-btn').addEventListener('click',function(){
       setTimeout(()=>{
         activate(2);
         setTimeout(()=>{
-          msg.classList.add('visible');
           btn.textContent='다시 보기';
           btn.disabled=false;
           animating=false;
-        },1000);
+        },300);
       },700);
     }));
   });
+})();
+
+/* Conclusion sentence assembly */
+(function(){
+  const lines=[document.getElementById('ca-1'),document.getElementById('ca-2'),document.getElementById('ca-3')];
+  const kr=document.getElementById('ca-kr');
+  let fired=false;
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{
+    if(e.isIntersecting&&!fired){
+      fired=true;
+      // wait 1s after conclusion lines have appeared
+      setTimeout(()=>{
+        lines[0].classList.add('visible');
+        setTimeout(()=>{lines[1].classList.add('visible')},600);
+        setTimeout(()=>{lines[2].classList.add('visible')},1200);
+        setTimeout(()=>{kr.classList.add('visible')},1700);
+      },1000);
+    }
+  })},{threshold:.3});
+  obs.observe(document.getElementById('conclusion-assembly'));
 })();
 </script>
 </body>
